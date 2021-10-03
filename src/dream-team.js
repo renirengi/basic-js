@@ -14,19 +14,18 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function createDreamTeam(/* members */) {
-  let members=arguments[0];
+  /*let members=arguments[0].filter(element => typeof element === 'string');
   let arr=[];
+  
   for(let i=0; i<members.length; i++){
-    members=members.filter(hate=> (hate!==null)&&(hate!==undefined)&&(hate!==" "));
-   if (typeof members[i]==="string"){
-        
-     arr.push(members[i][0].toUpperCase());
-     
-   }
- }
- if(arr.length===0){
+    members[i] = members[i].replace(/ /g, '');
+    console.log(members[i]);
+    arr.push(members[i][0].toUpperCase());
+  }
+
+   if(arr.length===0){
    return false;
- }
- return arr.sort().join('');
+   }
+   return arr.sort().join('');*/
 }
 

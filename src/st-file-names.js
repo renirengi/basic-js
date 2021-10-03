@@ -16,6 +16,31 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function renameFiles(/* names */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+
+  let name= arguments[0];
+let array=[];
+let buf="";
+for (let i=0;i<name.length;i++){
+  if(array.includes(name[i])){
+    buf=name[i]+"(1)";
+      if(array.includes(buf)){
+      buf=buf+"(1)";
+        if(array.includes(buf)){
+         array.push(name[i]+"(2)")
+         buf=""
+        }
+        else{
+        array.push(buf);
+        buf="";
+        }
+        }
+      array.push(buf);
+      buf="";
+
+}
+else{
+  array.push(name[i]);
+}
+}
+return array.filter(arr=>arr!=="");
 }

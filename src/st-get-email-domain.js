@@ -11,6 +11,13 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function getEmailDomain(/* email */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  let email=arguments[0];
+  let result;
+ for(let i=email.length-1; i>=0;i--){
+   if(email[i-1]==="@"){
+     result=email.slice(i);
+     break;
+   }
+ }
+ return result;
 }

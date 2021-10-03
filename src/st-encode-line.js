@@ -11,6 +11,26 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function encodeLine(/* str */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  let str=arguments[0];
+  let result="";  
+  let arr=str.split("");
+  
+  for(let i=0; i<arr.length; ){
+      let counter = 1;
+
+      for(let next=i+1; next<arr.length; next++){
+        if (arr[next]!==arr[i]){
+          break
+        }
+        counter++;
+      }
+
+      if (counter == 1)
+          result += arr[i];
+        else
+          result += counter + arr[i];
+
+      i+=counter;
+  }
+  return result;
 }

@@ -12,6 +12,20 @@ import { NotImplementedError } from '../extensions/index.js';
  * Strings have 3 common characters - 2 "a"s and 1 "c".
  */
 export default function getCommonCharacterCount(/* s1, s2 */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  let s1=arguments[0].split('');
+  let s2=arguments[1].split('');
+  let counter=0;
+  for( let i=0; i<s1.length; i++){
+    for( let j=0; j<s2.length; j++){
+        if (s1[i]===s2[j])
+        {
+          counter++;
+          s2.splice(j,1);
+          j--;
+          break;
+        }
+    }
+  }
+
+return counter;
 }

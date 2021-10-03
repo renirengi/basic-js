@@ -15,6 +15,27 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function isMAC48Address(/* n */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  let n=arguments[0];
+  if(n.length!==17){
+    return false;
+  }
+  for(let i=0; i<n.length; i++){
+    if((i===2)||(i===5)||(i===8)||(i===11)||(i===14)){
+      if(n[i]!=="-"){
+        return false;
+      }
+      continue;
+    }
+
+    if ((n[i]<="F") && (n[i]>="A")){
+      continue;
+    }
+    else
+    if ((n[i]>=0) && (n[i]<=9)){
+      continue;
+    }
+
+    return false;
+  }
+  return true;
 }
